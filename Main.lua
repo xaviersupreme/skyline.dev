@@ -36,17 +36,17 @@ local osdate = os.date
 
 --// Launching
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/skyline-dev/skyline-hub/main/src/lib/Functions%20Library.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xaviersupreme/skyline.dev/refs/heads/main/lib/Functions%20Library.lua"))()
 
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/skyline-dev/skyline-hub/main/src/lib/UI%20Library.lua"))({
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xaviersupreme/skyline.dev/refs/heads/main/lib/UI%20Library.lua"))({
     cheatname = "skyline.dev",
     gamename = "|", 
 })
 
 library:init()
 
-local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/skyline-dev/skyline-hub/main/src/modules/ESP.lua"))()
-local Aimbot = loadstring(game:HttpGet("https://raw.githubusercontent.com/skyline-dev/skyline-hub/main/src/modules/Aimbot.lua"))()
+local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/xaviersupreme/skyline.dev/refs/heads/main/modules/ESP.lua"))()
+local Aimbot = loadstring(game:HttpGet("https://raw.githubusercontent.com/xaviersupreme/skyline.dev/refs/heads/main/modules/Aimbot.lua"))()
 
 --// Variables
 
