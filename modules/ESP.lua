@@ -1045,7 +1045,7 @@ local CreatingFunctions = {
 			return
 		end
 
-		local Humanoid = FindFirstChildOfClass(__index(Entry.Object, "Parent"), "Humanoid")
+		local Humanoid = FindFirstChildOfClass(__index(Entry.Object, "parent"), "Humanoid")
 
 		if not Entry.IsAPlayer and not Humanoid then
 			return
@@ -1194,14 +1194,14 @@ local CreatingFunctions = {
 		local RenderObjects = {}
 
 		for Index, Value in next, CrosshairParts do
-			setrenderproperty(Value--[[._OBJECT]], "Visible", false) -- For some exploits, the parts are visible at the top left corner of the screen (when the crosshair is disabled upon execution).
-			RenderObjects[Index] = Value--[[._OBJECT]]
+			setrenderproperty(Value, "Visible", false) 
+			RenderObjects[Index] = Value
 		end
 
 		local Axis, Rotation, GapSize = GetMouseLocation(), Settings.Rotation, Settings.GapSize
 
 		ServiceConnections.UpdateCrosshairProperties, ServiceConnections.UpdateCrosshair = Connect(__index(RunService, DeveloperSettings.UpdateMode), function()
-			if Settings.Enabled and Environment.Settings.Enabled then
+			if Settings.Enabled then
 				if Settings.Position == 1 then
 					Axis = GetMouseLocation()
 				elseif Settings.Position == 2 then
@@ -1234,7 +1234,7 @@ local CreatingFunctions = {
 				GapSize = mathclamp(GapSize, 0, 24)
 			end
 		end), Connect(__index(RunService, DeveloperSettings.UpdateMode), function()
-			if Environment.Settings.Enabled then
+			if Settings.Enabled then
 				local AxisX, AxisY, Size = Axis.X, Axis.Y, Settings.Size
 
 				for ObjectName, RenderObject in next, RenderObjects do
