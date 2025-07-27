@@ -1790,7 +1790,9 @@ Environment.Load = function() -- (<void>) => <void>
 		return
 	end
 
-	LoadESP(); CreatingFunctions.Crosshair(); Loaded = true
+	LoadESP()
+	CreatingFunctions.Crosshair()
+	Loaded = true
 end
 
 Environment.UpdateConfiguration = function(DeveloperSettings, Settings, Properties) -- (<table> DeveloperSettings, <table> Settings, <table> Properties) => <table> New Environment
