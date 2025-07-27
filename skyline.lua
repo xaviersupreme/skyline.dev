@@ -28,14 +28,15 @@ getgenv().luaguardvars = {
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/drillygzzly/Other/main/1"))()
 
 library:init()
-library:SetTheme(library.themes[1].theme)
+library:SetTheme(library.themes[1].theme) 
+
 
 local Aimbot = loadstring(game:HttpGet("https://raw.githubusercontent.com/xaviersupreme/skyline.dev/refs/heads/main/modules/Aimbot.lua"))()
 Aimbot:Load()
 local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/xaviersupreme/skyline.dev/refs/heads/main/modules/ESP.lua"))()
 ESP:Load()
 
--- add missing config management functions to the library
+--[[
 if not library.getConfigs then
     function library:getConfigs()
         if not listfiles then return {} end
@@ -56,17 +57,18 @@ if not library.deleteConfig then
         delfile(path)
     end
 end
-
+]]--
 
 local aimbotSettings = getgenv().ExunysDeveloperAimbot.Settings
 local aimbotFOVSettings = getgenv().ExunysDeveloperAimbot.FOVSettings
 local espSettings = getgenv().ExunysDeveloperESP.Settings
 local espProps = getgenv().ExunysDeveloperESP.Properties
 
+-- Disable modules on execution
 aimbotSettings.Enabled = false
 espSettings.Enabled = false
 
-
+-- Create Main Window & Tabs
 local Window = library.NewWindow({
     title = "skyline.dev",
     size = UDim2.new(0, 550, .09, 650)
@@ -80,9 +82,10 @@ local tabs = {
     Settings = library:CreateSettingsTab(Window),
 }
 
-
+-- Create Watermark
 if library.addWatermark then
     library:addWatermark({text = "skyline.dev"})
+    library.flags.watermark = true
 end
 
 ------------
@@ -213,6 +216,16 @@ centerDotSection:AddSlider({ text = "Radius", flag = "Crosshair_CenterDot_Radius
 centerDotSection:AddColor({ text = "Color", flag = "Crosshair_CenterDot_Color", callback = function(c) crosshair.CenterDot.Color = c end, color = crosshair.CenterDot.Color })
 
 
+    local infoSection = tabs.Settings:AddSection("Information", 2)
+    infoSection:AddText({text="skyline.dev"})
+    infoSection:AddButton({text="Copy GitHub", callback = function() setclipboard("https://github.com/xaviersupreme") end})
+    infoSection:AddText({text="AirTeam © 2022 - "..os.date("%Y")})
+    infoSection:AddButton({text="Copy Discord Invite", callback = function() setclipboard("fatass") end})
+
+    local creditsSection = tabs.Settings:AddSection("Credits", 2)
+    creditsSection:AddText({text="Modules: Exunys"})
+    creditsSection:AddText({text="UI Lib: liam & xz"})
+    creditsSection:AddText({text="Assembled by xaviersupreme"})
 
 library:SendNotification("Loaded!", 5, Color3.new(255, 0, 0))
 
