@@ -36,6 +36,9 @@ Aimbot:Load()
 local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/xaviersupreme/skyline.dev/refs/heads/main/modules/ESP.lua"))()
 ESP:Load()
 
+aimbotSettings.Enabled = false
+espSettings.Enabled = false
+
 --[[
 if not library.getConfigs then
     function library:getConfigs()
@@ -64,11 +67,7 @@ local aimbotFOVSettings = getgenv().ExunysDeveloperAimbot.FOVSettings
 local espSettings = getgenv().ExunysDeveloperESP.Settings
 local espProps = getgenv().ExunysDeveloperESP.Properties
 
--- Disable modules on execution
-aimbotSettings.Enabled = false
-espSettings.Enabled = false
 
--- Create Main Window & Tabs
 local Window = library.NewWindow({
     title = "skyline.dev",
     size = UDim2.new(0, 550, .09, 650)
@@ -225,7 +224,7 @@ centerDotSection:AddColor({ text = "Color", flag = "Crosshair_CenterDot_Color", 
     local creditsSection = tabs.Settings:AddSection("Credits", 2)
     creditsSection:AddText({text="Modules: Exunys"})
     creditsSection:AddText({text="UI Lib: liam & xz"})
-    creditsSection:AddText({text="Assembled by xaviersupreme"})
+    creditsSection:AddText({text="Assembled & fixed by xaviersupreme"})
 
 library:SendNotification("Loaded!", 5, Color3.new(255, 0, 0))
 
