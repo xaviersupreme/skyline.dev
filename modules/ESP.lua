@@ -1045,7 +1045,7 @@ local CreatingFunctions = {
 			return
 		end
 
-		local Humanoid = FindFirstChildOfClass(__index(Entry.Object, "parent"), "Humanoid")
+		local Humanoid = FindFirstChildOfClass(__index(Entry.Object, "Parent"), "Humanoid")
 
 		if not Entry.IsAPlayer and not Humanoid then
 			return
