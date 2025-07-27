@@ -37,7 +37,7 @@ this thing is PACKED with features, srsly.
 ## How to Use
 
 1.  get a roblox script executor.
-2.  copy the script from `src/Main.lua`.
+2.  copy the script from `Main.lua`.
 3.  paste it in and run it. gg.
 
 ## Credits
