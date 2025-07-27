@@ -903,7 +903,7 @@ function library:init()
     function self.NewIndicator(data)
         local indicator = {
             title = data.title or 'indicator',
-            enabled = data.enabled or true,
+            enabled = data.enabled or false,
             position = data.position or newUDim2(0,15,0,300),
             values = {},
             objects = {valueObjects = {}},
