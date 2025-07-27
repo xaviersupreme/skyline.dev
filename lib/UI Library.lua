@@ -4490,7 +4490,7 @@ function library:init()
         self.watermark = {
             objects = {};
             text = {
-                {"skyline.dev | private", true},
+                {"informant.wtf", true},
                 {"V"..getgenv().Config.Version, true},
                 {getgenv().luaguardvars.DiscordName, true},
                 {'0 fps', true},
