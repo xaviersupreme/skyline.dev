@@ -1,4 +1,4 @@
-<span style="color:red">skyline.dev</span>
+<span style="color:deepskyblue; font-size: 30px;"><strong>skyline.dev</strong></span>
 
 just a script for roblox. probably has some features or whatever.
 
