@@ -2,8 +2,8 @@
 
 just a script for roblox. probably has some features or whatever.
 
-![skyline.dev](<img width="498" height="498" alt="image" src="https://github.com/user-attachments/assets/00824741-0330-4d7a-846e-214bc7ba5d0a" />
-)
+<img width="498" height="498" alt="image" src="https://github.com/user-attachments/assets/f820f541-6ec6-4122-8e82-8c56c3b22a32" />
+
 
 ##   Features
 
