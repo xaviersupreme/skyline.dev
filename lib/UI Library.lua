@@ -54,6 +54,7 @@ local library = {
         ['colorpicker'] = 1100;
         ['watermark'] = 1300;
         ['notification'] = 1400;
+        ['cursor'] = 1500;
     },
     stats = {
         ['fps'] = 0;
@@ -70,8 +71,8 @@ local library = {
     open = false;
     opening = false;
     hasInit = false;
-    cheatname = startupArgs.cheatname or 'octohook';
-    gamename = startupArgs.gamename or 'universal';
+    cheatname = startupArgs.cheatname or 'Clanware';
+    gamename = startupArgs.gamename or 'Universal';
     fileext = startupArgs.fileext or '.txt';
 }
 
@@ -79,7 +80,59 @@ library.themes = {
     {
         name = 'Default',
         theme = {
-            ["Accent"]                    = fromrgb(204, 45, 45);
+            ['Accent']                    = fromrgb(135,206,235);
+            ['Background']                = fromrgb(17,17,17);
+            ['Border']                    = fromrgb(0,0,0);
+            ['Border 1']                  = fromrgb(47,47,47);
+            ['Border 2']                  = fromrgb(17,17,17);
+            ['Border 3']                  = fromrgb(10,10,10);
+            ['Primary Text']              = fromrgb(235,235,235);
+            ['Group Background']          = fromrgb(17,17,17);
+            ['Selected Tab Background']   = fromrgb(17,17,17);
+            ['Unselected Tab Background'] = fromrgb(17,17,17);
+            ['Selected Tab Text']         = fromrgb(245,245,245);
+            ['Unselected Tab Text']       = fromrgb(145,145,145);
+            ['Section Background']        = fromrgb(17,17,17);
+            ['Option Text 1']             = fromrgb(245,245,245);
+            ['Option Text 2']             = fromrgb(195,195,195);
+            ['Option Text 3']             = fromrgb(145,145,145);
+            ['Option Border 1']           = fromrgb(47,47,47);
+            ['Option Border 2']           = fromrgb(0,0,0);
+            ['Option Background']         = fromrgb(35,35,35);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
+        }
+    },
+    {
+        name = 'Midnight',
+        theme = {
+            ['Accent']                    = fromrgb(103,89,179);
+            ['Background']                = fromrgb(22,22,31);
+            ['Border']                    = fromrgb(0,0,0);
+            ['Border 1']                  = fromrgb(50,50,50);
+            ['Border 2']                  = fromrgb(24,25,37);
+            ['Border 3']                  = fromrgb(10,10,10);
+            ['Primary Text']              = fromrgb(235,235,235);
+            ['Group Background']          = fromrgb(24,25,37);
+            ['Selected Tab Background']   = fromrgb(24,25,37);
+            ['Unselected Tab Background'] = fromrgb(22,22,31);
+            ['Selected Tab Text']         = fromrgb(245,245,245);
+            ['Unselected Tab Text']       = fromrgb(145,145,145);
+            ['Section Background']        = fromrgb(22,22,31);
+            ['Option Text 1']             = fromrgb(245,245,245);
+            ['Option Text 2']             = fromrgb(195,195,195);
+            ['Option Text 3']             = fromrgb(145,145,145);
+            ['Option Border 1']           = fromrgb(50,50,50);
+            ['Option Border 2']           = fromrgb(0,0,0);
+            ['Option Background']         = fromrgb(24,25,37);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
+        }
+    },
+    {
+        name = 'Nekocheat',
+        theme = {
+            ["Accent"]                    = fromrgb(226, 30, 112);
             ["Background"]                = fromrgb(18,18,18);
             ["Border"]                    = fromrgb(0,0,0);
             ["Border 1"]                  = fromrgb(60,60,60);
@@ -103,27 +156,27 @@ library.themes = {
         }
     },
     {
-        name = 'Informant_V1',
+        name = 'Nekocheat Blue',
         theme = {
-            ['Accent']                    = fromrgb(103,89,179);
-            ['Background']                = fromrgb(22,22,31);
-            ['Border']                    = fromrgb(0,0,0);
-            ['Border 1']                  = fromrgb(50,50,50);
-            ['Border 2']                  = fromrgb(24,25,37);
-            ['Border 3']                  = fromrgb(10,10,10);
-            ['Primary Text']              = fromrgb(235,235,235);
-            ['Group Background']          = fromrgb(24,25,37);
-            ['Selected Tab Background']   = fromrgb(24,25,37);
-            ['Unselected Tab Background'] = fromrgb(22,22,31);
-            ['Selected Tab Text']         = fromrgb(245,245,245);
-            ['Unselected Tab Text']       = fromrgb(145,145,145);
-            ['Section Background']        = fromrgb(22,22,31);
-            ['Option Text 1']             = fromrgb(245,245,245);
-            ['Option Text 2']             = fromrgb(195,195,195);
-            ['Option Text 3']             = fromrgb(145,145,145);
-            ['Option Border 1']           = fromrgb(50,50,50);
-            ['Option Border 2']           = fromrgb(0,0,0);
-            ['Option Background']         = fromrgb(24,25,37);
+            ["Accent"]                    = fromrgb(0, 247, 255);
+            ["Background"]                = fromrgb(18,18,18);
+            ["Border"]                    = fromrgb(0,0,0);
+            ["Border 1"]                  = fromrgb(60,60,60);
+            ["Border 2"]                  = fromrgb(18,18,18);
+            ["Border 3"]                  = fromrgb(10,10,10);
+            ["Primary Text"]              = fromrgb(255,255,255);
+            ["Group Background"]          = fromrgb(18,18,18);
+            ["Selected Tab Background"]   = fromrgb(18,18,18);
+            ["Unselected Tab Background"] = fromrgb(18,18,18);
+            ["Selected Tab Text"]         = fromrgb(245,245,245);
+            ["Unselected Tab Text"]       = fromrgb(145,145,145);
+            ["Section Background"]        = fromrgb(18,18,18);
+            ["Option Text 1"]             = fromrgb(255,255,255);
+            ["Option Text 2"]             = fromrgb(255,255,255);
+            ["Option Text 3"]             = fromrgb(255,255,255);
+            ["Option Border 1"]           = fromrgb(50,50,50);
+            ["Option Border 2"]           = fromrgb(0,0,0);
+            ["Option Background"]         = fromrgb(23,23,23);
             ["Risky Text"]                = fromrgb(175, 21, 21);
             ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
         }
@@ -574,7 +627,7 @@ function library:init()
     function self:LoadConfig(name)
         local cfg = self:GetConfig(name)
         if not cfg then
-
+            self:SendNotification('Error loading config: Config does not exist. ('..tostring(name)..')', 5, c3new(1,0,0));
             return
         end
 
@@ -602,10 +655,16 @@ function library:init()
             setByConfig = false
         end)
 
+        if s then
+            self:SendNotification('Successfully loaded config: '..name, 5, c3new(0,1,0));
+        else
+            self:SendNotification('Error loading config: '..tostring(e)..'. ('..tostring(name)..')', 5, c3new(1,0,0));
+        end
     end
 
     function self:SaveConfig(name)
         if not self:GetConfig(name) then
+            self:SendNotification('Error saving config: Config does not exist. ('..tostring(name)..')', 5, c3new(1,0,0));
             return
         end
 
@@ -633,6 +692,12 @@ function library:init()
             end
             writefile(self.cheatname..'/'..self.gamename..'/configs/'..name..self.fileext, http:JSONEncode(cfg));
         end)
+
+        if s then
+            self:SendNotification('Successfully saved config: '..name, 5, c3new(0,1,0));
+        else
+            self:SendNotification('Error saving config: '..tostring(e)..'. ('..tostring(name)..')', 5, c3new(1,0,0));
+        end
     end
 
     for i,v in next, self.images do
@@ -642,6 +707,21 @@ function library:init()
         self.images[i] = readfile(self.cheatname..'/assets/'..i..'.oh');
     end
 
+    self.cursor1 = utility:Draw('Triangle', {Filled = true, Color = fromrgb(255,255,255), ZIndex = self.zindexOrder.cursor});
+    self.cursor2 = utility:Draw('Triangle', {Filled = true, Color = fromrgb(85,85,85), self.zindexOrder.cursor-1});
+    local function updateCursor()
+        self.cursor1.Visible = self.open
+        self.cursor2.Visible = self.open
+        if self.cursor1.Visible then
+            local pos = inputservice:GetMouseLocation();
+            self.cursor1.PointA = pos;
+            self.cursor1.PointB = pos + newVector2(16,5);
+            self.cursor1.PointC = pos + newVector2(5,16);
+            self.cursor2.PointA = self.cursor1.PointA + newVector2(0, 0)
+            self.cursor2.PointB = self.cursor1.PointB + newVector2(1, 1)
+            self.cursor2.PointC = self.cursor1.PointC + newVector2(1, 1)
+        end
+    end
 
     local screenGui = Instance.new('ScreenGui');
     if syn then syn.protect_gui(screenGui); end
@@ -719,6 +799,7 @@ function library:init()
         if input.UserInputType == Enum.UserInputType.MouseMovement then
             if library.open then
                 mousemove:Fire(inputservice:GetMouseLocation());
+                updateCursor();
 
                 if library.CurrentTooltip ~= nil then
                     local mousePos = inputservice:GetMouseLocation()
@@ -769,6 +850,7 @@ function library:init()
             actionservice:UnbindAction('FreezeMovement');
         end
 
+        updateCursor();
         for _,window in next, self.windows do
             window:SetOpen(bool);
         end
@@ -2405,7 +2487,7 @@ function library:init()
                             self.bind = (keybind and keybind) or keybind or self.bind
                             if self.bind == Enum.KeyCode.Backspace then
                                 self.bind = 'none';
-                                bind.state = true
+
                                 if bind.flag then
                                     library.flags[bind.flag] = bind.state;
                                 end
@@ -2429,7 +2511,7 @@ function library:init()
                             self.indicatorValue:SetKey((self.text == nil or self.text == '') and (self.flag == nil and 'unknown' or self.flag) or self.text); -- this is so dumb
                             self.indicatorValue:SetValue('['..keyName:upper()..']');
                             if self.bind == 'none' then
-                                self.indicatorValue:SetValue('[Always]');
+
                             end
                             self.objects.keyText.ThemeColor = self.objects.holder.Hover and 'Accent' or 'Option Text 3';
                         end
@@ -4487,14 +4569,22 @@ function library:init()
     
     -- Watermark
     do
+        if not IonHub_User then
+            getgenv().IonHub_User = {
+                UID = 0, 
+                User = "admin"
+            }
+        end
         self.watermark = {
             objects = {};
             text = {
-                {"informant.wtf", true},
-                {"V"..getgenv().Config.Version, true},
-                {getgenv().luaguardvars.DiscordName, true},
+                {self.cheatname, true},
+                {"Private", true},
+                {self.gamename, true},
                 {'0 fps', true},
                 {'0ms', true},
+                {'00:00:00', true},
+                {'M, D, Y', true},
             };
             lock = 'custom';
             position = newUDim2(0,0,0,0);
@@ -4510,6 +4600,8 @@ function library:init()
 
                 self.text[4][1] = library.stats.fps..' fps'
                 self.text[5][1] = floor(library.stats.ping)..'ms'
+                self.text[6][1] = os.date('%X', os.time())
+                self.text[7][1] = table.concat(date, ', ')
 
                 local text = {};
                 for _,v in next, self.text do
@@ -4600,7 +4692,7 @@ function library:init()
         end
     end)
 
-    self.keyIndicator = self.NewIndicator({title = 'Keybinds', pos = newUDim2(0,15,0,325), enabled = false});
+    self.keyIndicator = self.NewIndicator({title = 'Keybinds', pos = newUDim2(0,15,0,325), enabled = true});
     
     self.targetIndicator = self.NewIndicator({title = 'Target Info', pos = newUDim2(0,15,0,350), enabled = false});
     self.targetName = self.targetIndicator:AddValue({key = 'Name     :', value = 'nil'})
@@ -4616,10 +4708,9 @@ function library:init()
 end
 
 function library:CreateSettingsTab(menu)
-    local settingsTab = menu:AddTab('Settings', 999);
-    local configSection = settingsTab:AddSection('Config', 2);
+    local settingsTab = menu:AddTab('  Settings  ', 999);
+    local configSection = settingsTab:AddSection('Config', 1);
     local mainSection = settingsTab:AddSection('Main', 1);
-
 
     configSection:AddBox({text = 'Config Name', flag = 'configinput'})
     configSection:AddList({text = 'Config', flag = 'selectedconfig'})
@@ -4634,17 +4725,15 @@ function library:CreateSettingsTab(menu)
         end
     end
 
-    configSection:AddButton({text = 'Load', confirm = false, callback = function()
+    configSection:AddButton({text = 'Load', confirm = true, callback = function()
         library:LoadConfig(library.flags.selectedconfig);
     end}):AddButton({text = 'Save', confirm = true, callback = function()
         library:SaveConfig(library.flags.selectedconfig);
     end})
 
-    configSection:AddButton({text = 'Create', confirm = false, callback = function()
-        if library.flags.configinput == "" then 
-            return
-        end
+    configSection:AddButton({text = 'Create', confirm = true, callback = function()
         if library:GetConfig(library.flags.configinput) then
+            library:SendNotification('Config \''..library.flags.configinput..'\' already exists.', 5, c3new(1,0,0));
             return
         end
         writefile(self.cheatname..'/'..self.gamename..'/configs/'..library.flags.configinput.. self.fileext, http:JSONEncode({}));
@@ -4658,28 +4747,13 @@ function library:CreateSettingsTab(menu)
 
     refreshConfigs()
 
-    mainSection:AddBind({text = 'Open / Close', flag = 'togglebind', nomouse = true, noindicator = true, bind = Enum.KeyCode.RightShift, callback = function()
+    mainSection:AddBind({text = 'Open / Close', flag = 'togglebind', nomouse = true, noindicator = true, bind = Enum.KeyCode.End, callback = function()
         library:SetOpen(not library.open)
     end});
 
-    mainSection:AddToggle({text = 'Disable Movement If Open', flag = 'disablemenumovement', callback = function(bool)
-        if bool and library.open then
-            actionservice:BindAction(
-                'FreezeMovement',
-                function()
-                    return Enum.ContextActionResult.Sink
-                end,
-                false,
-                unpack(Enum.PlayerActions:GetEnumItems())
-            )
-        else
-            actionservice:UnbindAction('FreezeMovement');
-        end
-    end})
-
     mainSection:AddButton({text = 'Join Discord', flag = 'joindiscord', confirm = true, callback = function()
         local res = syn.request({
-            Url = 'http://127.0.0.1:6463/rpc?v=1',
+            Url = 'https://discord.gg/rkRW5VrbWu',
             Method = 'POST',
             Headers = {
                 ['Content-Type'] = 'application/json',
@@ -4688,54 +4762,62 @@ function library:CreateSettingsTab(menu)
             Body = game:GetService('HttpService'):JSONEncode({
                 cmd = 'INVITE_BROWSER',
                 nonce = game:GetService('HttpService'):GenerateGUID(false),
-                args = {code = getgenv().Config.Invite}
+                args = {code = 'rkRW5VrbWu'}
             })
         })
-    end})
-    
-    mainSection:AddButton({text = 'Copy Discord', flag = 'copydiscord', callback = function()
-        setclipboard('https://discord.gg/'..getgenv().Config.Invite)
+        if res.Success then
+            library:SendNotification(library.cheatname..' | Joined Discord', 3);
+        end
     end})
 
     mainSection:AddButton({text = 'Rejoin Server', confirm = true, callback = function()
         game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId);
     end})
 
+    mainSection:AddButton({text = 'Rejoin Game', confirm = true, callback = function()
+        game:GetService("TeleportService"):Teleport(game.PlaceId);
+    end})
+
     mainSection:AddButton({text = 'Copy Join Script', callback = function()
         setclipboard(([[game:GetService("TeleportService"):TeleportToPlaceInstance(%s, "%s")]]):format(game.PlaceId, game.JobId))
     end})
 
-    mainSection:AddButton({text = 'Unload', confirm = true, callback = function()
-        library:Unload();
-    end})
+    mainSection:AddButton({text = "Unload", confirm = true,
+       callback = function(bool)
+           if bool then
+               library:Unload() 
+           else
+               library:Unload() 
+           end
+       end})
 
-    mainSection:AddSeparator({text = 'Keybinds'});
-    mainSection:AddToggle({text = 'Keybind Indicator', flag = 'keybind_indicator', callback = function(bool)
+    mainSection:AddSeparator({text = 'Indicators'});
+
+    mainSection:AddToggle({text = 'Watermark', flag = 'watermark_enabled', state = true,});
+
+    mainSection:AddSlider({text = 'Custom X', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1, value = 6});
+    mainSection:AddSlider({text = 'Custom Y', flag = 'watermark_y', suffix = '%', min = 0, max = 100, increment = .1, value = 1});
+
+    mainSection:AddToggle({text = 'Keybinds', flag = 'keybind_indicator', state = true, callback = function(bool)
         library.keyIndicator:SetEnabled(bool);
     end})
     mainSection:AddSlider({text = 'Position X', flag = 'keybind_indicator_x', min = 0, max = 100, increment = .1, value = .5, callback = function()
         library.keyIndicator:SetPosition(newUDim2(library.flags.keybind_indicator_x / 100, 0, library.flags.keybind_indicator_y / 100, 0));    
     end});
-    mainSection:AddSlider({text = 'Position Y', flag = 'keybind_indicator_y', min = 0, max = 100, increment = .1, value = 35, callback = function()
+    mainSection:AddSlider({text = 'Position Y', flag = 'keybind_indicator_y', min = 0, max = 100, increment = .1, value = 30, callback = function()
         library.keyIndicator:SetPosition(newUDim2(library.flags.keybind_indicator_x / 100, 0, library.flags.keybind_indicator_y / 100, 0));    
     end});
 
-    mainSection:AddSeparator({text = 'Watermark'})
-    mainSection:AddToggle({text = 'Enabled', flag = 'watermark_enabled'});
-    mainSection:AddList({text = 'Position', flag = 'watermark_pos', selected = 'Custom', values = {'Top', 'Top Left', 'Top Right', 'Bottom Left', 'Bottom Right', 'Custom'}, callback = function(val)
-        library.watermark.lock = val;
-    end})
-    mainSection:AddSlider({text = 'Custom X', flag = 'watermark_x', suffix = '%', value = 6.1, min = 0, max = 100, increment = .1});
-    mainSection:AddSlider({text = 'Custom Y', flag = 'watermark_y', suffix = '%', value = 1.2, min = 0, max = 100, increment = .1});
 
-    local themeStrings = {};
+
+    local themeStrings = {"Custom"};
     for _,v in next, library.themes do
         table.insert(themeStrings, v.name)
     end
-    local themeSection = settingsTab:AddSection('Theme', 1);
+    local themeSection = settingsTab:AddSection('Custom Theme', 2);
     local setByPreset = false
-
-    themeSection:AddList({text = 'Presets', flag = 'preset_theme', values = themeStrings, callback = function(newTheme)
+themeSection:AddList({text = 'Presets', flag = 'preset_theme', values = themeStrings, callback = function(newTheme)
+        if newTheme == "Custom" then return end
         setByPreset = true
         for _,v in next, library.themes do
             if v.name == newTheme then
@@ -4750,6 +4832,16 @@ function library:CreateSettingsTab(menu)
         end
         setByPreset = false
     end}):Select('Default');
+
+    for i, v in pairs(library.theme) do
+        themeSection:AddColor({text = i, flag = i, color = library.theme[i], callback = function(c3)
+            library.theme[i] = c3
+            library:SetTheme(library.theme)
+            if not setByPreset and not setByConfig then 
+                library.options.preset_theme:Select('Custom')
+            end
+        end});
+    end
 
     return settingsTab;
 end
