@@ -223,7 +223,7 @@ centerDotSection:AddColor({ text = "Color", flag = "Crosshair_CenterDot_Color", 
     creditsSection:AddText({text="UI Lib: liam & xz"})
     creditsSection:AddText({text="Assembled & fixed by xaviersupreme"})
 
-library:SendNotification("Loaded!", 5, Color3.new(255, 0, 0))
+makefolder("skyline.devv")
 
 local Time = (string.format("%."..tostring(Decimals).."f", os.clock() - Clock))
 library:SendNotification(("Loaded In "..tostring(Time)), 6)
