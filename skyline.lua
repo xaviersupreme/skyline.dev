@@ -16,22 +16,16 @@
 
 ]]
 
-getgenv().Config = {
-	Invite = "skyline.dev",
-	Version = "2.46.1",
-}
+local Decimals = 4
+local Clock = os.clock()
+local ValueText = "Value Is Now :"
 
-getgenv().luaguardvars = {
-	DiscordName = "",
-}
-
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xaviersupreme/skyline.dev/refs/heads/main/lib/UI%20Library.lua"))()({
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/drillygzzly/Roblox-UI-Libs/main/1%20Tokyo%20Lib%20(FIXED)/Tokyo%20Lib%20Source.lua"))({
     cheatname = "skyline.dev",
     gamename = "",
 })
 
 library:init()
-library:SetTheme(library.themes[1].theme) 
 
 
 local Aimbot = loadstring(game:HttpGet("https://raw.githubusercontent.com/xaviersupreme/skyline.dev/refs/heads/main/modules/Aimbot.lua"))()
@@ -231,7 +225,8 @@ centerDotSection:AddColor({ text = "Color", flag = "Crosshair_CenterDot_Color", 
 
 library:SendNotification("Loaded!", 5, Color3.new(255, 0, 0))
 
-
+local Time = (string.format("%."..tostring(Decimals).."f", os.clock() - Clock))
+library:SendNotification(("Loaded In "..tostring(Time)), 6)
 
 --[[
 
